@@ -1,0 +1,20 @@
+{
+	"name": "CI-Server",
+	"dockerComposeFile": "compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+	"forwardPorts": [8000],
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+		  // Add the IDs of extensions you want installed when the container is created.
+		  "extensions": [
+			"ms-python.python",
+			"ms-azuretools.vscode-docker",
+			"ms-python.isort",
+			"GitHub.copilot",
+			"mhutchie.git-graph"
+		  ]
+		}
+	  }
+}

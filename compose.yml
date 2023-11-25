@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/app/:cached
+      - ~/.ssh:/root/.ssh
+    command: sleep infinity
+    ports:
+      - "22111:8000"

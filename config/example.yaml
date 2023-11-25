@@ -1,0 +1,6 @@
+host: 192.168.0.1
+user: ubuntu
+pr_script: /home/ubuntu/pr.sh
+push_script: /home/ubuntu/pr.sh
+trust_users:
+  - hibiki31
