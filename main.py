@@ -42,20 +42,21 @@ def gh_name(json_body: dict, name: str, request: Request):
         
     if not sender_id in config["trust_users"]:
         return {"message": "Bad World"}
-        
-    send_json(
-        local_path=dump_file_name,
-        remote_path=f"/tmp/ci.json",
-        hostname=config["host"],
-        user=config["user"]
-    )
     
     if event == "push":
+        send_json(
+            local_path=dump_file_name,
+            remote_path=f"/tmp/ci.json",
+            hostname=config["host"],
+            user=config["user"]
+        )
         run_cmd(
             hostname=config["host"],
             user=config["user"],
             cmd=config["push_script"]
         )
+    else:
+        return {"message": "Not follow event"}
     
     return {"message": "Hello World"}
 

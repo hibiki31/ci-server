@@ -16,5 +16,5 @@ gh webhook forward --repo=hibiki31/virty --events=pull_request,push --url=http:/
 
 
 ```
-curl -d @dump/2023-1125-153046.json -H "Content-Type: application/json" http://localhost:8000/gh/virty
+curl -d @dump/2023-1125-185058_push_hibiki31.json -H "Content-Type: application/json" -H "X-GitHub-Event: push" http://localhost:22111/gh/virty
 ```
